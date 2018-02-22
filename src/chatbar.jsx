@@ -17,6 +17,11 @@ class Chatbar extends Component {
   onPressEnter(event) {
     if (event.key === 'Enter') {
       // they pressed enter!
+      let messageObj = {
+        user: this.state.user,
+        content: this.state.messageText
+      }
+      this.props.socket.send(JSON.stringify(messageObj));
       this.props.newMessage(this.state.messageText, this.state.user);
       this.setState({ messageText: '' });
     }
