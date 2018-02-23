@@ -13,15 +13,33 @@ const server = express()
 
 // Create the WebSockets server
 const wss = new SocketServer({ server });
+let numberOfClients = 0;
+
+function updateClientCount(connecting) {
+  if (connecting){
+    numberOfClients++;
+  } else if (!connecting){
+    numberOfClients--;
+  }
+  console.log(numberOfClients);
+  
+  let messageObj = {type: 'client', content: numberOfClients};
+  wss.clients.forEach(function each(client) {
+    client.send(JSON.stringify(messageObj));
+  })
+}
 
 wss.on('connection', (ws) => {
   console.log('Client Connected');
+  updateClientCount(true);
   ws.on('message', (data) => {
-    let messageIn = JSON.parse(data);
-    console.log('Recieved:', messageIn);
+    wss.clients.forEach(function each(client) {
+      client.send(data);
+    });
   });
   ws.on('error', () => {});
   ws.on('close', () => {
+    updateClientCount(false);
     console.log('client disconnected');
   });
 });

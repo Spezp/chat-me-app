@@ -5,10 +5,12 @@ class MessageList extends Component {
     console.log('rendering <MessageList/>');
     
     const messages = this.props.messages.map((message) => {
+      console.log(message.color);;
+      
       if (message.type === 'user') {
         return (
           <div className="message" key={message.id}>
-            <span className="message-username">{message.user}</span>
+            <span className="message-username" style={{color: message.color}}>{message.user}</span>
             <span className="message-content">{message.text}</span>
           </div>
         );
