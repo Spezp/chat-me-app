@@ -1,19 +1,9 @@
-React Boilerplate
+PILO
 =====================
 
-A minimal and light dev environment for ReactJS.
+A simple app for text based chat made using React and Websockets.
 
-### Usage
-
-Clone the boilerplate and create your own git repo.
-
-```
-git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
-cd react-simple-boilerplate
-git remote rm origin
-git remote add origin [YOUR NEW REPOSITORY]
-# Manually update your package.json file
-```
+### Get running
 
 Install the dependencies and start the server.
 
@@ -21,6 +11,14 @@ Install the dependencies and start the server.
 npm install
 npm start
 open http://localhost:3000
+```
+
+Install dependencies and start Websocket Server
+
+```
+npm install
+npm start
+open http://localhost:3001
 ```
 
 ### Static Files
