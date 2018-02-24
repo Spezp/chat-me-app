@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   getRandomColor() {
-    const colors = ['blue', 'red', 'purple', 'tomato'];
+    const colors = ['rgb(255, 56, 105)', '#005288', 'rgb(0, 162, 255)', 'tomato'];
     let pickColor = colors[Math.floor(Math.random() * 4)];
     return pickColor;
 }

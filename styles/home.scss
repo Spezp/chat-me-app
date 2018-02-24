@@ -1,15 +1,16 @@
-   
+
+    .badge-pill {
+      background-color: royalblue;
+    }
+          
     html { 
-      background: url('/src/image/background1.jpeg') no-repeat center center fixed; 
+      background: url('/src/image/background2.png') no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
-    .badge-pill {
-      background-color: royalblue;
-    }
-    
+
     body {
       background-color: transparent;
       color: rgb(255, 255, 255);
@@ -19,8 +20,8 @@
     }
 
     .chatbar {
-      background: rgba(119, 0, 255, 0.281);
-      border-top: 1px solid black;
+      background: rgb(94, 255, 161);
+
       bottom: 0;
       padding: 5px;
       margin: 0 auto;
@@ -30,7 +31,6 @@
 
     .chatbar-message,
     .chatbar-username {
-      border: 1px solid black;
       display: block;
       height: 40px;
       line-height: 40px;
@@ -40,6 +40,8 @@
 
     .chatbar-message {
       display: inline;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
     }
 
     .chatbar-username {
@@ -61,6 +63,7 @@
     .message.system {
       font-style: italic;
       padding: 5px 20px;
+      color: rgb(255, 56, 105);
     }
 
     .client-count {
@@ -77,19 +80,19 @@
     }
     .message-username {
       color: white;
+      text-shadow: 2px 2px #000000
     }
     .message-content {
+      color: rgb(255, 56, 105);
     }
 
     .message-username {
       font-weight: 700;
-      background-color: blanchedalmond;
     }
 
     .navbar {
-      background: rgba(119, 0, 255, 0.281);
+      background: rgb(255, 56, 105);
       font-family: 'Quicksand', sans-serif;
-      border-bottom: 1px solid black;
       height: 60px;
       padding: 0 10px;
       color: white;
@@ -100,8 +103,9 @@
     .chat-main {
       border-radius: 10px;
       max-width: 700px;
+      background-color: rgb(255, 245, 227);
       margin: auto;
-      padding: 10px;
+      box-shadow: 5px 10px #005288;
     }
 
     .navbar-brand {
