@@ -49,16 +49,16 @@ class Chatbar extends Component {
   }
   render() {
 
-    return (<footer className="chatbar">
+    return (<footer className="chatbar col-xs-12 col-sm-12">
       <input 
       value={this.state.user}
-      className="chatbar-username" 
+      className="chatbar-username col-sm-2 col-xs-2" 
       onChange={this.usernameChange.bind(this)}
       placeholder="Your Name (Optional)" />
       <input 
       value={this.state.messageText}
       onChange={this.onMessageTextChange.bind(this)}
-      className="chatbar-message" 
+      className="chatbar-message col-sm-9 col-xs-9" 
       placeholder="Type a message and hit ENTER" 
       onKeyPress={this.onPressEnter.bind(this)}
       />

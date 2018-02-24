@@ -1,21 +1,30 @@
    
+    html { 
+      background: url('/src/image/background1.jpeg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .badge-pill {
+      background-color: royalblue;
+    }
     body {
-      background: white;
-      color: black;
+      background-color: transparent;
+      color: rgb(255, 255, 255);
       font-family: 'Open Sans', sans-serif;
       font-size: 14px;
       margin: 70px 0;
     }
 
     .chatbar {
-      background: tomato;
+      background: rgba(119, 0, 255, 0.281);
       border-top: 1px solid black;
       bottom: 0;
-      display: flex;
-      left: 0;
       padding: 5px;
-      position: fixed;
-      right: 0;
+      margin: 0 auto;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     .chatbar-message,
@@ -29,16 +38,23 @@
     }
 
     .chatbar-message {
-      flex: 8;
+      display: inline;
     }
 
     .chatbar-username {
-      flex: 2;
+      display: inline;
     }
 
     .message {
-      display: flex;
       padding: 5px;
+    }
+
+    .messages {
+      background-color: rgba(255, 255, 255, 0.281);
+      bottom: 50px;
+      height: 20em;
+      overflow: auto;
+      word-wrap: break-word;
     }
 
     .message.system {
@@ -46,31 +62,42 @@
       padding: 5px 20px;
     }
 
+    .client-count {
+      font-size: 1em;
+      margin: 0;
+    }
+
     .message-content,
     .message-username {
       overflow: hidden;
       margin: 5px;
       padding: 0 10px;
-    }
 
+    }
+    .message-username {
+      color: white;
+    }
     .message-content {
-      flex: 8;
     }
 
     .message-username {
-      flex: 2;
       font-weight: 700;
+      background-color: blanchedalmond;
     }
 
     .navbar {
-      background: tomato;
+      background: rgba(119, 0, 255, 0.281);
+      font-family: 'Quicksand', sans-serif;
       border-bottom: 1px solid black;
       height: 60px;
-      left: 0;
       padding: 0 10px;
-      position: fixed;
-      right: 0;
-      top: 0;
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .chat-main {
+      border-radius: 10px;
     }
 
     .navbar-brand {
@@ -84,3 +111,4 @@
       padding: 0 10px;
       text-decoration: none;
     }
+    

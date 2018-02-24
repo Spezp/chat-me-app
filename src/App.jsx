@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: {name: 'Bob', color: this.getRandomColor()},
+      currentUser: {name: 'Anon', color: this.getRandomColor()},
       messages: [],
       clientCount: 1
     };
@@ -61,6 +61,8 @@ class App extends Component {
       user: message.user,
       color: message.color
     };
+    var objDiv = document.getElementById("message-jump");
+    objDiv.scrollTop = objDiv.scrollHeight;
     const newMessages = this.state.messages.concat(newMessageObject);
     this.setState({
       messages: newMessages
@@ -68,18 +70,20 @@ class App extends Component {
   }
   render() {
     console.log('Rendering <app/>');
-    return (<div>
-      <Navbar clientCount={this.state.clientCount}/>
-      <MessageList 
-      messages={this.state.messages} 
-      />
-      <Chatbar 
-      user={this.state.currentUser.name}
-      color={this.state.currentUser.color}
-      newMessage={this.appendNewMessage.bind(this)}
-      newUser={this.userChange.bind(this)}
-      socket={this.socket}
-      />
+    return (<div className="container">
+      <div className="chat-main">
+        <Navbar clientCount={this.state.clientCount}/>
+        <MessageList 
+        messages={this.state.messages} 
+        />
+        <Chatbar 
+        user={this.state.currentUser.name}
+        color={this.state.currentUser.color}
+        newMessage={this.appendNewMessage.bind(this)}
+        newUser={this.userChange.bind(this)}
+        socket={this.socket}
+        />
+      </div>
       </div>
     );
   }

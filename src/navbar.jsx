@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 class Navbar extends Component {
-  
+
   render() {
     return (
       <nav className="navbar">
-        <a href="/" className="navbar-brand">Chatty</a>
-        <p> {this.props.clientCount}</p>
+        <a href="/" className="navbar-brand">PILO TALK</a>
+        <p className="client-count align-middle ">Online: <span className="badge badge-pill badge-default">{this.props.clientCount}</span></p>
       </nav>
     );
   }
