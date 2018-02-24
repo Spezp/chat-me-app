@@ -10,8 +10,12 @@ class MessageList extends Component {
       if (message.type === 'user') {
         return (
           <div className="message" key={message.id}>
-            <span className="message-username" style={{backgroundColor: message.color}}>{message.user}</span>
-            <span className="message-content">{message.text}</span>
+          <div className="container">
+            <div className="row">
+              <span className="message-username col-sm-2" style={{backgroundColor: message.color}}>{message.user}</span>
+              <span className="message-content">{message.text}</span>
+            </div>
+          </div>
           </div>
         );
       } else if (message.type === 'system') {

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import update from 'immutability-helper';
 import Navbar from './navbar.jsx';
 import Chatbar from './chatbar.jsx';
 import MessageList from './message-list.jsx';
@@ -18,7 +17,6 @@ class App extends Component {
   }
   
   componentDidMount() {
-    console.log("componentDidMount <App />");
     this.socket.onopen = () => {
       console.log('Connected to Server');
     }
@@ -38,13 +36,11 @@ class App extends Component {
   getRandomColor() {
     const colors = ['blue', 'red', 'purple', 'tomato'];
     let pickColor = colors[Math.floor(Math.random() * 4)];
-    console.log('pick', pickColor);
     return pickColor;
 }
-  updateClient(num) {
 
-    this.setState({ clientCount: num })
-    console.log('set State:', this.state.clientCount);
+  updateClient(num) {
+    this.setState({ clientCount: num });
   }
 
   userChange(newName) {
@@ -53,6 +49,7 @@ class App extends Component {
       return previousState;
     })
   }
+
   appendNewMessage(message) {
     const newMessageObject = {
       id: message.id,
@@ -61,16 +58,16 @@ class App extends Component {
       user: message.user,
       color: message.color
     };
-    var objDiv = document.getElementById("message-jump");
+    var objDiv = document.getElementById('message-jump');
     objDiv.scrollTop = objDiv.scrollHeight;
     const newMessages = this.state.messages.concat(newMessageObject);
     this.setState({
       messages: newMessages
     })
   }
+
   render() {
-    console.log('Rendering <app/>');
-    return (<div className="container">
+    return (<div className="main-container">
       <div className="chat-main">
         <Navbar clientCount={this.state.clientCount}/>
         <MessageList 

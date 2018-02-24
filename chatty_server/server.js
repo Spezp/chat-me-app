@@ -21,7 +21,6 @@ function updateClientCount(connecting) {
   } else if (!connecting){
     numberOfClients--;
   }
-  console.log(numberOfClients);
   
   let messageObj = {type: 'client', content: numberOfClients};
   wss.clients.forEach(function each(client) {
@@ -43,6 +42,3 @@ wss.on('connection', (ws) => {
     console.log('client disconnected');
   });
 });
-// Set up a callback that will run when a client connects to the server
-// When a client connects they are assigned a socket, represented by
-// the ws parameter in the callback.

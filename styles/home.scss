@@ -9,6 +9,7 @@
     .badge-pill {
       background-color: royalblue;
     }
+    
     body {
       background-color: transparent;
       color: rgb(255, 255, 255);
@@ -98,6 +99,9 @@
 
     .chat-main {
       border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+      padding: 10px;
     }
 
     .navbar-brand {
